@@ -1,10 +1,11 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const Layout: NextPage = ({ children }) => {
-
+  const { t } = useTranslation();
   return (
     <div className={styles.container}>
             <Head>
@@ -15,7 +16,7 @@ const Layout: NextPage = ({ children }) => {
     <main className={styles.main}>
 
         <h1 className={styles.title}>
-          Ask me a question!
+          {t('askMeQuestion')}
         </h1>
 
         {children}
@@ -56,7 +57,7 @@ const Layout: NextPage = ({ children }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Developed by Leonardo Estrela
+          {t('createdBy')} Leonardo Estrela
         </a>
       </footer>
       </div>

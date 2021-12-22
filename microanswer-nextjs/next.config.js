@@ -1,12 +1,9 @@
 /** @type {import('next').NextConfig} */
+
+//This will allow us to import all our configs related to i18n.
+const { i18n } = require('./next-i18next.config');
+
 module.exports = {
   reactStrictMode: true,
-  i18n: {
-    // These are all the locales you want to support in
-    // your application
-    locales: ['en-US', 'pt'],
-    // This is the default locale you want to be used when visiting
-    // a non-locale prefixed path e.g. `/hello`
-    defaultLocale: 'pt',
-  },
+  i18n
 }

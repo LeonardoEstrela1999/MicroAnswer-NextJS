@@ -4,6 +4,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { useRouter } from 'next/router'
 import { ReactElement, useEffect, useState } from 'react'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 const Home: NextPage = () => {
   const router = useRouter();
@@ -27,3 +28,9 @@ const Home: NextPage = () => {
 }
 
 export default Home;
+
+export const getServerSideProps  = async ({ locale } : {locale: any}) => ({
+  props: {
+      ...(await serverSideTranslations(locale, ['translation']))
+  }
+});
