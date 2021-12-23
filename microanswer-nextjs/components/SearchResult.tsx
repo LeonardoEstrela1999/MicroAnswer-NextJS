@@ -19,7 +19,7 @@ function SearchResult(props: ISearchProps) {
         return (<div>Loading...</div>)
     }else {
         return (
-            <div className={styles.container}>
+            <div>
               <img src={props.searchObject.image} />
               <p>{props.searchObject.url}</p>
               <p>{props.searchObject.answer}</p>

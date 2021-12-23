@@ -31,16 +31,19 @@ function Home(props: ISearchProps) {
 
   return (
     <div className={styles.container}>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Search input:
-          <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+      <div>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <label>
+            Search input:
+            <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} />
+          </label>
+          <input type="submit" value="Submit" />
+        </form> 
+      </div>
+
       {
         searchResult ?
-        <SearchResult searchObject={searchResult!}></SearchResult>
+        <div><SearchResult searchObject={searchResult!}/></div>
         : <div></div> 
       }
     </div>
