@@ -36,6 +36,7 @@ If you are unsure how to get the key, I advise you to follow their official docu
 https://m3o.com/getting-started
 
 Finally, just run the following command (make sure that you are inside your project's root folder):
+
 npm:
 ```
 npm run dev
