@@ -3,21 +3,20 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { useTranslation } from 'next-i18next';
 
+// The app's layout component
 const Layout: NextPage = ({ children }) => {
   const { t } = useTranslation();
   return (
     <div className={styles.container}>
-            <Head>
+      <Head>
         <title>{t('askMeQuestion')}</title>
         <meta name="description" content={t('description')} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-    <main className={styles.main}>
-
+      <main className={styles.main}>
         <div className={styles.topnav}>
           <h2 className={styles.title}>{t('askMeQuestion')}</h2>
-        </div> 
-
+        </div>
         {children}
       </main>
       <footer className={styles.footer}>
@@ -29,7 +28,7 @@ const Layout: NextPage = ({ children }) => {
           {t('createdBy')} Leonardo Estrela
         </a>
       </footer>
-      </div>
+    </div>
   )
 }
 

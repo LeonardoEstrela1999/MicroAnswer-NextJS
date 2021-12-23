@@ -1,31 +1,24 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { useRouter } from 'next/router'
-import { ReactElement, useEffect, useState } from 'react'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Search from '../viewmodel/Search'
 
+//This interface could be expanded in the future. 
+//For now, it helps us keep the code a bit cleaner
 export interface ISearchProps {
-    searchObject: Search;
-  }
-  
+  searchObject: Search;
+}
 
+// Custom component to present the search result
 function SearchResult(props: ISearchProps) {
-    const router = useRouter();
-
-    if(router.isFallback){
-        return (<div>Loading...</div>)
-    }else {
-        return (
-            <div>
-              <img src={props.searchObject.image} />
-              <p>{props.searchObject.url}</p>
-              <p>{props.searchObject.answer}</p>
-            </div>
-          )
-    }
+    return (
+      <div>
+          <div className={styles.result_section + " " + styles.image_container}>
+            <img className={styles.image} src={props.searchObject.image} />
+          </div>
+          <div className={styles.result_section}><a href={props.searchObject.url}>{props.searchObject.url}</a>
+            <p>{props.searchObject.answer}</p></div>
+      </div>
+    )
 
 }
 
